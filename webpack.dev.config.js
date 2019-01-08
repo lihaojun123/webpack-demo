@@ -2,7 +2,7 @@
  * @Author: lichangjun 
  * @Date: 2018-07-21 22:23:39 
  * @Last Modified by: lichangjun
- * @Last Modified time: 2019-01-08 19:38:56
+ * @Last Modified time: 2019-01-08 19:39:28
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -61,6 +61,7 @@ module.exports = {
         }
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
         //打包css
         new ExtractTextPlugin("css/[name].css"),
         new CopyWebpackPlugin([
@@ -69,6 +70,7 @@ module.exports = {
                 to: path.resolve(__dirname, 'dist/plugins')
             }
         ]),
+
         new htmlWebpackPlugin({
             template: "./src/views/index.html",
             filename: "views/index.html",
@@ -94,9 +96,15 @@ module.exports = {
     stats: {
         colors: true
     },
-    performance: {
-        hints: "error",
-        maxEntrypointSize: 250000,
-        maxAssetSize: 250000
+    devtool: 'source-map',
+    devServer: {
+        contentBase: path.resolve("./dist/views/"),
+        port: 8080,
+        open: true,
+        inline: true,
+        hot: true,
+        proxy: {
+
+        }
     }
 }

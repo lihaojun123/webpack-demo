@@ -1,3 +1,6 @@
+/**
+ * jquery导进来的页面
+ */
 import "./index.css"
 import Tab from "../../conponents/tab/tab.js"
 class Index {
@@ -7,7 +10,8 @@ class Index {
         this.init();
     }
     init() {
-        document.getElementsByClassName("demo")[0].innerHTML = this.name
+        //document.getElementsByClassName("demo")[0].innerHTML = this.name
+        $(".demo").html(this.name);
         new Tab({
             id: "2222",
             name: "xxx11"

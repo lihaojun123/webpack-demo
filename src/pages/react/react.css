@@ -1,0 +1,8 @@
+.container{
+    width:980px;
+    margin:0 auto;
+    border: 1px solid #ddd;
+}
+.demo{
+    font-size:26px;
+}
