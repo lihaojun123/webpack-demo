@@ -1,3 +1,11 @@
 .demo{
     color:red;
 }
+.component1{
+    background:#ddd;
+    border:1px solid #eee;
+}
+.component2{
+    background:#999;
+    border:1px solid #eee;
+}
