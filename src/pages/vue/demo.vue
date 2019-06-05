@@ -1,20 +1,23 @@
 <template>
     <div>
         <p>我是一个新的组件，展示共享的数据</p> 
-        <p>{{count}}</p> 
+        <p @click="myclick">{{name}}</p> 
     </div>
 </template>
-<script>
-    export default{
-        data(){
-            return{
-
-            }
-        },
-        computed:{
-            count(){
-                return this.$store.state.count
-            }
-        }
-    }
+<script lang='ts'>
+import Vue from "vue";
+import { Component } from "vue-property-decorator";
+export default class Demo extends Vue {
+  message: string = "hello";
+  name: string = "张三";
+  mounted(): void {
+    this.getName();
+  }
+  myclick(): void {
+    alert(this.name);
+  }
+  getName(): void {
+    console.log("xxx");
+  }
+}
 </script>

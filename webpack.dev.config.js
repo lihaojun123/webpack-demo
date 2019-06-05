@@ -13,7 +13,7 @@ module.exports = {
     entry: {
         "index": "./src/pages/index/index.js",
         "react": "./src/pages/react/index.js",
-        "vuedemo": "./src/pages/vue/index.js"
+        "vuedemo": "./src/pages/vue/index.ts"
     },
     output: {
         path: path.resolve(__dirname, 'dist/'),
@@ -39,9 +39,12 @@ module.exports = {
                 loader: 'vue-loader'
             },
             {
-                test: /\.ts?$/,
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: 'ts-loader'
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/],
+                  }
             },
             {
                 test: /\.css$/,
@@ -59,7 +62,7 @@ module.exports = {
         ]
     },
     resolve: {//别名的配置
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.js', '.vue', '.json','.ts'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             "@": path.resolve(__dirname, 'src/')
