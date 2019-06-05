@@ -3,6 +3,7 @@
  */
 import "./index.css"
 import Tab from "../../conponents/tab/tab.js"
+@testable
 class Index {
     constructor() {
         this.id = 123;
@@ -18,5 +19,10 @@ class Index {
         })
     }
 }
+function testable(target) {
+    target.isTestable = true;
+}
+
+console.log(Index.isTestable);
 
 new Index()
