@@ -3,6 +3,7 @@
  */
 import "./index.css"
 import Tab from "../../conponents/tab/tab.js"
+import tsDemo from './tsdemo.ts'
 @testable
 class Index {
     constructor() {
@@ -17,6 +18,8 @@ class Index {
             id: "2222",
             name: "xxx11"
         })
+
+        let a=new tsDemo("张三");
     }
 }
 function testable(target) {

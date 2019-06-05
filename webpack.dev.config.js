@@ -39,6 +39,11 @@ module.exports = {
                 loader: 'vue-loader'
             },
             {
+                test: /\.ts?$/,
+                exclude: /node_modules/,
+                loader: 'ts-loader'
+            },
+            {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
