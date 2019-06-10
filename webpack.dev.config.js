@@ -11,7 +11,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: {
-        "index": "./src/pages/index/index.js",
+        "index": "./src/pages/jquery/index.ts",
         "react": "./src/pages/react/index.js",
         "vuedemo": "./src/pages/vue/index.ts"
     },
@@ -41,10 +41,13 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                loader: 'ts-loader',
-                options: {
-                    appendTsSuffixTo: [/\.vue$/],
-                  }
+                use: [
+                    "babel-loader",
+                    {
+                        loader: "ts-loader",
+                        options: { appendTsxSuffixTo: [/\.vue$/] }
+                    }
+                ]
             },
             {
                 test: /\.css$/,
@@ -62,7 +65,7 @@ module.exports = {
         ]
     },
     resolve: {//别名的配置
-        extensions: ['.js', '.vue', '.json','.ts'],
+        extensions: ['.js', '.json', '.ts'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             "@": path.resolve(__dirname, 'src/')

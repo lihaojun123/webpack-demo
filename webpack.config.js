@@ -11,7 +11,7 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
     entry: {
-        "index": "./src/pages/index/index.js",
+        "index": "./src/pages/index/index.ts",
         "react": "./src/pages/react/index.js",
         "vuedemo": "./src/pages/vue/index.js"
     },

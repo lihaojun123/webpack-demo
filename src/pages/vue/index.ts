@@ -3,5 +3,6 @@ import Demo from './demo.vue'
 import './index.css'
 new Vue({
     el: '#vue-app',
-    render: h => h(Demo)
+    template: '<Demo/>',
+    components: { Demo }
 })
