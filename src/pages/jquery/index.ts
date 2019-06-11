@@ -1,11 +1,14 @@
 import './index.css'
+import * as _ from "lodash";
+//import $ from "jquery";
 class Index {
     constructor() {
-        this.$container = $(".container")
+        // _.padStart("Hello TypeScript!", 20, " ");
+        $(".container").html("xxxx")
     }
     bindEvent(): void {
          
     }
 }
 
-export default Index
+new Index()

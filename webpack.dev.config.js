@@ -9,6 +9,7 @@ const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");//单独打包css插件
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     entry: {
         "index": "./src/pages/jquery/index.ts",
@@ -24,7 +25,7 @@ module.exports = {
         "jquery": "window.jQuery"
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
@@ -40,14 +41,11 @@ module.exports = {
             },
             {
                 test: /\.tsx?$/,
+                loader: 'ts-loader',
                 exclude: /node_modules/,
-                use: [
-                    "babel-loader",
-                    {
-                        loader: "ts-loader",
-                        options: { appendTsxSuffixTo: [/\.vue$/] }
-                    }
-                ]
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
             },
             {
                 test: /\.css$/,
@@ -65,13 +63,14 @@ module.exports = {
         ]
     },
     resolve: {//别名的配置
-        extensions: ['.js', '.json', '.ts'],
+        extensions: ['.js', '.json', '.ts','.vue'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             "@": path.resolve(__dirname, 'src/')
         }
     },
     plugins: [
+        new VueLoaderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         //打包css
         new ExtractTextPlugin("css/[name].css"),
