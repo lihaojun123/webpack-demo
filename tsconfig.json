@@ -14,18 +14,29 @@
     "noImplicitAny": false,
     "baseUrl": ".",
     "strictPropertyInitialization": false,
-    "types": ["webpack-env","jquery"],
+    "types": [
+      "webpack-env",
+      "jquery",
+      "vue"
+    ],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue"
   ],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules"
+  ]
 }
-
-  

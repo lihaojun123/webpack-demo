@@ -1,8 +1,8 @@
-import Vue from "vue"
-import Demo from './demo.vue'
+import Vue from 'vue'
+import Container from './Container.vue'
 import './index.css'
 new Vue({
     el: '#vue-app',
-    template: '<Demo/>',
-    components: { Demo }
+    template: '<Container/>',
+    components: { Container }
 })
