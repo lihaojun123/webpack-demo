@@ -7,6 +7,8 @@ import Container from './react.js'
 import './react.css';
 
 const store = createStore(rootReducer)
+let a:string="aaaa";
+console.log(a);
 ReactDOM.render(
     <Provider store={store}>
           <Container/>

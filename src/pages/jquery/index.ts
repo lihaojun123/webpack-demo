@@ -1,20 +1,19 @@
 import './index.css'
-class Index {
-    constructor() {
-        this.bindEvent();
-    }
-    bindEvent(): void {
-        let _this = this;
-        let el: any = $(".container");
-        el.on("click", "a", function (e) {
-             alert("");
-        })
 
-    }
-}
+// class Index {
+//     constructor() {
+//         this.bindEvent();
+//     }
+//     bindEvent(): void {
+//         let _this = this;
+//         let el: any = $(".container");
+//         el.on("click", "a", function (e) {
+//              alert("");
+//         })
 
-new Index()
-
+//     }
+// }
+// new Index()
 // let name: string = "xxxx";
 // let num: number = 123;
 // let arr: number[] = [1, 2, 3];
@@ -81,3 +80,24 @@ new Index()
 //         return target
 //     }
 // }
+
+interface Animate{
+    up:string;
+    down:string;
+    num:number;
+    getDirection(d:string)
+}
+
+class Dog implements Animate{
+    up:string;
+    down:string;
+    num:number;
+    constructor(){
+        this.getDirection("aaaa");
+    }
+    getDirection(d:string){
+        console.log(d);
+    }
+}
+
+new Dog()

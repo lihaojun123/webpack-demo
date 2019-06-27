@@ -1,8 +1,8 @@
 /*
  * @Author: lichangjun 
  * @Date: 2018-07-21 22:23:39 
- * @Last Modified by: lichangjun
- * @Last Modified time: 2019-01-08 19:39:28
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2019-06-27 20:19:01
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -13,7 +13,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
     entry: {
         "index": "./src/pages/jquery/index.ts",
-        "react": "./src/pages/react/index.js",
+        "react": "./src/pages/react/index.tsx",
         "vuedemo": "./src/pages/vue/index.ts"
     },
     output: {
