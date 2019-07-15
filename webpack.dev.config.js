@@ -2,7 +2,7 @@
  * @Author: lichangjun 
  * @Date: 2018-07-21 22:23:39 
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2019-06-27 20:19:01
+ * @Last Modified time: 2019-07-09 11:21:45
  */
 const path = require("path");
 const webpack = require("webpack");
@@ -49,12 +49,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [{
-                        loader: 'css-loader'
-                    }]
-                }) //单独打包loader对样式的处理
+                loader: 'style-loader!css-loader'
             }, {
                 test: /\.(png|jpeg|jpg|gif|woff|svg|eot|ttf)\??.*$/,
                 loader: "url-loader?limit=100&name=resource/[hash:8][name].[ext]"//图片的处理

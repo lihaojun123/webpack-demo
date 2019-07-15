@@ -11,3 +11,5 @@ export default class List2 extends Vue {
   }
 }
 </script>
+<style scoped>
+</style>

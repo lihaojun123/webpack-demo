@@ -52,7 +52,7 @@ export default class Container extends Vue {
   }
 }
 </script>
-<style scope>
+<style scoped>
 .container {
   width: 900px;
   margin: 0 auto;
